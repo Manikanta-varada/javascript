@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+	</title>
+	<script src="https://kit.fontawesome.com/ea6d4fec5e.js" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		function on(){
+			let newTodo=document.getElementById("newTodo").value
+			document.getElementById("newTodo").value=""
+			if(newTodo===""){
+				alert("Enter a message")
+			}
+			else{
+				addTodo(newTodo)
+			}
+			addTodo(newTodo)
+		}
+		function addTodo(newValue){
+			let ul=document.querySelector("ul")
+			console.log(ul)
+			let li=document.createElement("li")
+			li.innerHTML=`
+			<span class="listitem">${newValue}</span>
+			<i class="fa-solid fa-rectangle-xmark"></i>`
+			ul.appendChild(li)
+			li.classList.add("list-type")
+		}
+	</script>
+	<style type="text/css">
+		.list-type{
+			list-style: none;
+		}
+		.listitem{
+			font-size: 1.5rem;
+		}
+		.color{
+			background-size: 85%;
+			background-color: lightgreen;
+			padding: 18% 37%;
+			background-image: url("https://i0.wp.com/www.streethunters.net/wp-content/uploads/2014/09/blured-man-se.jpg?fit=2048%2C1361&ssl=1");
+			margin: auto;
+
+			
+		}
+		.newTodo{
+
+
+
+		}
+		.white{
+			background-color: whitesmoke;
+			border: 2px solid whitesmoke;
+			padding: 10% 0% 10% 20%;
+			border-radius: 20px;
+
+		}
+	</style>
+</head>
+<body class="color">
+	<div class="white">
+		<input placeholder="Enter a message" id="newTodo" value="" type="text" width: 35%; />
+			<ul>
+	
+			</ul>
+		<button onclick="on()">submit</button>
+		
+	</div>
+
+</body>
+</html>
